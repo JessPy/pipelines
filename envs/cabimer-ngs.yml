@@ -1,0 +1,34 @@
+# Ambiente para reproduzir as análises do grupo González-Aguilera (CABIMER)
+# Versões fixadas = as declaradas nos registros GEO quando existem (ver guia técnico).
+# Criar:  mamba env create -f envs/cabimer-ngs.yml
+name: cabimer-ngs
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.10
+  - sra-tools>=3.0
+  - pigz
+  - fastqc=0.12.1
+  - multiqc
+  - fastp
+  - bowtie=1.3.1          # autores: Bowtie 1.2.0 (Galaxy); 1.3.x mantém -m/--best
+  - bowtie2
+  - hisat2=2.2.1          # autores: HISAT2 2.2.1
+  - samtools>=1.17
+  - bedtools=2.30.0       # autores: bedtools genomecov 2.30.0
+  - deeptools=3.5.1       # autores: bamCoverage 3.5.1
+  - macs2=2.2.7.1         # autores: MACS2 bdgbroadcall 2.2.7.1
+  - umi_tools=1.1.2       # autores: UMI-tools 1.1.2
+  - subread               # featureCounts
+  - picard
+  - ucsc-bedgraphtobigwig
+  - ucsc-fetchchromsizes
+  - htseq                 # necessário para os scripts python do DEXSeq
+  - pysam
+  - r-base=4.3
+  - bioconductor-deseq2
+  - bioconductor-dexseq
+  - bioconductor-apeglm
+  - r-tidyverse
+  - r-pheatmap
